@@ -76,8 +76,26 @@ WSGI_APPLICATION = 'superlists.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'tdd_project',
+        'ENFORCE_SCHEMA': True,
+        'CLIENT': {
+            'host': '127.0.0.1',
+            'port': 27010,
+            'username': 'qicai21',
+            'password': '5233',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1'
+        }
+    },
+    'LOGGING': {
+        'version': 1,
+        'loggers': {
+            'djongo': {
+                'level': 'DEBUG',
+                'propagate': False,
+            }
+        },
     }
 }
 
