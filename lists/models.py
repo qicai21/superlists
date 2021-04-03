@@ -6,7 +6,7 @@ class List(models.Model):
 
 
 class Item(models.Model):
-    n_list = models.ForeignKey(
+    list = models.ForeignKey(
         List,
         on_delete=models.CASCADE,
         null=True)
