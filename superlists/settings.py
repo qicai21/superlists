@@ -22,12 +22,12 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     ALLOWED_HOSTS = [os.environ['SITENAME']]
-    MONGO_DBNAME = 'tdd_project'
+    MONGO_DBNAME = 'superlists_staging'
 else:
     DEBUG = True
     SECRET_KEY = 'insercure-key-for-dev'
     ALLOWED_HOSTS = []
-    MONGO_DBNAME = 'superlists_staging'
+    MONGO_DBNAME = 'tdd_project'
 
 # Application definition
 
