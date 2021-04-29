@@ -22,11 +22,12 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     ALLOWED_HOSTS = [os.environ['SITENAME']]
+    MONGO_DBNAME = 'tdd_project'
 else:
     DEBUG = True
     SECRET_KEY = 'insercure-key-for-dev'
     ALLOWED_HOSTS = []
-
+    MONGO_DBNAME = 'superlists_staging'
 
 # Application definition
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'superlists.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'tdd_project',
+        'NAME': MONGO_DBNAME,
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
             'host': '127.0.0.1',
