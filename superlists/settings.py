@@ -25,7 +25,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     MONGO_DBNAME = 'superlists_staging'
 else:
     DEBUG = True
-    SECRET_KEY = 'insercure-key-for-dev'
+    SECRET_KEY = 'vc_a2)@hdld=l+1!#!$a8a_-#0qy%kh12s-(d1ty*d93ug5&-1'
     ALLOWED_HOSTS = []
     MONGO_DBNAME = 'tdd_project'
 
